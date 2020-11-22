@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="731.0" prefWidth="1016.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.HomeController">
+   <left>
+      <AnchorPane prefHeight="538.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label layoutX="1.0" layoutY="28.0" text="Thông Tin Chứng Khoán">
+               <font>
+                  <Font name="System Bold Italic" size="16.0" />
+               </font>
+            </Label>
+            <Label layoutX="13.0" layoutY="57.0" text="Chọn ngày" />
+            <DatePicker fx:id="thoiGian" layoutX="3.0" layoutY="79.0" onAction="#pickDate" />
+            <Label layoutX="11.0" layoutY="111.0" text="Chọn sàn" />
+            <Label layoutX="12.0" layoutY="169.0" text="Chọn mã" />
+            <ComboBox fx:id="nhomCoPhieu" layoutX="26.0" layoutY="445.0" prefWidth="150.0" />
+            <Button layoutX="77.0" layoutY="232.0" mnemonicParsing="false" onAction="#xemTheoMa" styleClass="xemButton" text="Xem" />
+            <Label layoutX="54.0" layoutY="294.0" text="Tin nhanh">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <Button fx:id="bluechipButton" layoutX="11.0" layoutY="367.0" mnemonicParsing="false" onAction="#xemBluechip" text="Bluechip" />
+            <Button layoutX="122.0" layoutY="367.0" mnemonicParsing="false" text="Nước ngoài" />
+            <Button layoutX="9.0" layoutY="329.0" mnemonicParsing="false" text="Tăng mạnh" />
+            <Button layoutX="120.0" layoutY="329.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="96.0" text="Giảm mạnh" />
+            <Label layoutX="52.0" layoutY="416.0" text="Nhóm Cố Phiếu">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Label>
+            <Button layoutX="77.0" layoutY="489.0" mnemonicParsing="false" styleClass="xemButton" text="Xem" />
+            <TextField fx:id="maText" layoutX="9.0" layoutY="192.0" />
+            <Line endX="100.0" layoutX="103.0" layoutY="274.0" startX="-100.0" />
+            <ComboBox fx:id="sanText" editable="true" layoutX="11.0" layoutY="136.0" prefWidth="150.0" visibleRowCount="3" />
+         </children>
+         <padding>
+            <Insets bottom="15.0" right="15.0" top="15.0" />
+         </padding>
+         <BorderPane.margin>
+            <Insets left="30.0" />
+         </BorderPane.margin>
+      </AnchorPane>
+   </left>
+   <center>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <TextArea fx:id="banTinText" layoutX="8.0" layoutY="61.0" prefHeight="258.0" prefWidth="538.0" wrapText="true" />
+            <Label layoutX="149.0" layoutY="27.0" text="BẢN TIN CHỨNG KHOÁN">
+               <font>
+                  <Font name="System Bold Italic" size="19.0" />
+               </font>
+            </Label>
+            <LineChart fx:id="chart" layoutX="1.0" layoutY="319.0" prefHeight="219.0" prefWidth="545.0">
+              <xAxis>
+                 <NumberAxis fx:id="timeAxis" side="BOTTOM" />
+              </xAxis>
+              <yAxis>
+                <NumberAxis fx:id="valueAxis" side="LEFT" />
+              </yAxis>
+            </LineChart>
+         </children>
+      </AnchorPane>
+   </center>
+   <top>
+      <AnchorPane prefHeight="147.0" prefWidth="1016.0" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView id="image" fx:id="imageView" fitHeight="155.0" fitWidth="417.0" layoutX="353.0" layoutY="-8.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@stockPic.jpeg" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+   </top>
+   <right>
+      <AnchorPane prefHeight="544.0" prefWidth="208.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label layoutX="55.0" layoutY="32.0" text="Ngay lúc này..." />
+            <Label layoutX="28.0" layoutY="90.0" text="Các cổ phiếu biến động mạnh " />
+            <Button layoutX="127.0" layoutY="123.0" mnemonicParsing="false" text="Giảm" />
+            <Button layoutX="20.0" layoutY="123.0" mnemonicParsing="false" text="Tăng" />
+            <Button layoutX="28.0" layoutY="242.0" mnemonicParsing="false" text="VN30" />
+            <Button layoutX="128.0" layoutY="242.0" mnemonicParsing="false" text="HNX30" />
+            <Label layoutX="81.0" layoutY="200.0" text="TOP 30" />
+         </children>
+      </AnchorPane>
+   </right>
+</BorderPane>
